@@ -13,7 +13,7 @@ Run `pip install lpips`. The following Python code is all you need.
 ```python
 import lpips
 loss_fn_alex = lpips.LPIPS(net='alex') # best forward scores
-loss_fn_vgg = lpips.LPIPS(net='vgg') # closer to "traditional" perceptual loss, when used for optimization
+loss_fn_vgg = lpips.LPIPS(net='vgg') # closer to "traditional" perceptual loss, when used for optimization, you should add .to(device) to ensure the loss_fn is in the same device of your tensor 
 
 import torch
 img0 = torch.zeros(1,3,64,64) # image should be RGB, IMPORTANT: normalized to [-1,1]
